@@ -3,3 +3,44 @@
     font-weight: lighter;
 }
 
+body {
+    background-color: #333;
+}
+
+.text-input {
+    border: 2px solid gainsboro;
+    height: 1.25rem;
+    padding: 5px;
+}
+
+#titlebar {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#close p {
+    color: white;
+    border-color: lightgreen;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#start-timer {
+    color: white;
+    background-color: transparent;
+    border: 1px solid lightgreen;
+    height: 35px;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 1s ease-out, color 1s ease-out;
+}
+
+#start-timer:hover {
+    background-color: lightgreen;
+    color: black;
+}

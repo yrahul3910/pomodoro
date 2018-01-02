@@ -13,7 +13,7 @@ let mainWindow;
 
 function createWindow () {
     // Create the browser window.
-    mainWindow = new BrowserWindow({width: screen.width, height: screen.height, frame: false, fullscreen: true});
+    mainWindow = new BrowserWindow({frame: false, fullscreen: true});
     mainWindow.setAlwaysOnTop(true);
     //mainWindow.webContents.openDevTools();
     mainWindow.setMenu(null);
