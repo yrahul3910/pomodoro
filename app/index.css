@@ -44,3 +44,26 @@ body {
     background-color: lightgreen;
     color: black;
 }
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    margin-top: 20vh;
+    font-size: 70px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border: 2px solid lightgreen;
+    height: 30vh;
+    width: 30vw;
+    transition: background-color 1s, ease-out, color 1s ease-out;
+}
+
+.timer:hover {
+    background-color: lightgreen;
+    color: black;
+}
