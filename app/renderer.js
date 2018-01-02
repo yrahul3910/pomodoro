@@ -26,9 +26,11 @@ $(document).ready(() => {
                 $("#status").html("Break!");
                 $(".timer").css("border-color", "red");
                 $(".timer:hover").css("background-color", "red");
+                $("#close").show();
                 time = $("#break-time").val() * 60000;
             } else {
                 $("#status").html("Session");
+                $("#close").hide();
                 $(".timer").css("border-color", "lightgreen");
                 $(".timer:hover").css("background-color", "lightgreen");
                 session = true;
@@ -44,7 +46,7 @@ $(document).ready(() => {
             running = true;
             session = true;
             time = Number.parseInt($("#study-time").val()) * 60 * 1000;
-            console.log(time);
+            $("#close").hide();
             intervalID = setInterval(tick, 1000);
         } else if (running) {
             running = false;
