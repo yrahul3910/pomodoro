@@ -15,7 +15,7 @@ function createWindow () {
     // Create the browser window.
     mainWindow = new BrowserWindow({frame: false, fullscreen: true});
     mainWindow.setAlwaysOnTop(true);
-    //mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
     mainWindow.setMenu(null);
 
     // and load the index.html of the app.
@@ -24,9 +24,6 @@ function createWindow () {
         protocol: "file:",
         slashes: true
     }));
-
-    // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on("closed", function () {

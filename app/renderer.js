@@ -26,57 +26,57 @@ $(document).ready(() => {
                 $("#status").html("Break!");
                 $(".timer").css("border-color", "red");
                 $(".timer:hover").css("background-color", "red");
-                time = $("#break").val() * 60000;
+                time = $("#break-time").val() * 60000;
             } else {
                 $("#status").html("Session");
                 $(".timer").css("border-color", "lightgreen");
                 $(".timer:hover").css("background-color", "lightgreen");
                 session = true;
-                time = Number.parseInt($("#session").val()) * 60000;
+                time = Number.parseInt($("#study-time").val()) * 60000;
             }
         }
     }
 
     $(".timer").click(function() {
-        if (time === undefined) { // first time
-            $("#session").prop("disabled", true);
-            $("#break").prop("disabled", true);
+        if (!time) { // first time
+            $("#study-time").prop("disabled", true);
+            $("#break-time").prop("disabled", true);
             running = true;
             session = true;
-            time = $("#session").val() * 60 * 1000;
-            //time = 5000;
+            time = Number.parseInt($("#study-time").val()) * 60 * 1000;
+            console.log(time);
             intervalID = setInterval(tick, 1000);
         } else if (running) {
             running = false;
             if (session) {
-                $("#session").prop("disabled", false);
-                $("#break").prop("disabled", true);
+                $("#study-time").prop("disabled", false);
+                $("#break-time").prop("disabled", true);
             } else {
-                $("#session").prop("disabled", true);
-                $("#break").prop("disabled", false);
+                $("#study-time").prop("disabled", true);
+                $("#break-time").prop("disabled", false);
             }
             clearInterval(intervalID);
         } else {
-            $("#session").prop("disabled", true);
-            $("#break").prop("disabled", true);
+            $("#study-time").prop("disabled", true);
+            $("#break-time").prop("disabled", true);
             running = true;
             intervalID = setInterval(tick, 1000);
         }
     });
-    $("#session").on("change", function() {
+    $("#study-time").on("change", function() {
         if (session === false) return;
         // Reset everything
         clearInterval(intervalID);
         running = false;
         time = undefined;
-        $("#timeLeft").html($("#session").val());
+        $("#timeLeft").html($("#study-time").val());
     });
-    $("#break").on("change", function() {
+    $("#break-time").on("change", function() {
         if (session === true) return;
         // Reset everything
         clearInterval(intervalID);
         running = false;
         time = undefined;
-        $("#timeLeft").html($("#break").val());
+        $("#timeLeft").html($("#break-time").val());
     });
 });
