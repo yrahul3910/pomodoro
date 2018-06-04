@@ -15,7 +15,7 @@ function createWindow () {
     // Create the browser window.
     mainWindow = new BrowserWindow({frame: false, fullscreen: true});
     mainWindow.setAlwaysOnTop(true);
-    mainWindow.webContents.openDevTools();
+    //mainWindow.webContents.openDevTools();
     mainWindow.setMenu(null);
 
     // and load the index.html of the app.
